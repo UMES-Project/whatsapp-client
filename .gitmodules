@@ -1,0 +1,3 @@
+[submodule "web-ext-library"]
+	path = web-ext-library
+	url = https://github.com/UMES-Project/web-ext-library
