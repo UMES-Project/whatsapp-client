@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "UMES WhatsApp Client",
+    "version": "1.0",
+    "background": {
+        "scripts": [
+            "web-ext-library/background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "src/content.js",
+                "web-ext-library/content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
