@@ -1,7 +1,7 @@
 function addUMESButton(hoverToolsElement, id) {
     var UMESButton = document.createElement("img")
     UMESButton.src = browser.extension.getURL("assets/umes-icon.png")
-    UMESButton.style = "height: 25px; opacity: 1; cursor: pointer"
+    UMESButton.style = "height: 24px; opacity: 1; cursor: pointer"
 
     UMESButton.addEventListener("click", () => {
         var message = document.querySelector(`span[umes--id="${id}"]`)
@@ -19,7 +19,9 @@ function addUMESButton(hoverToolsElement, id) {
 (async () => {
     await import(chrome.extension.getURL('web-ext-library/content.js'))
 
-    var UMES = new UMES_ContentScript()
+    var storage = await browser.storage.local.get('server');
+
+    var UMES = new UMES_ContentScript(storage.server || "http://localhost:5000/api")
 
     console.log(UMES)
 

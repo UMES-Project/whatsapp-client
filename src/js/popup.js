@@ -22,7 +22,7 @@ serverInput.addEventListener("input", async () => {
 testConnection.addEventListener("click", async () => {
     var storage = await browser.storage.local.get('server');
 
-    browser.runtime.sendMessage({ action: "UMES_makeRequest", url: `${storage.server}/api/info` }, (res) => {
+    browser.runtime.sendMessage({ action: "UMES_makeRequest", url: `${storage.server}/info` }, (res) => {
         if (!res.success) {
             document.querySelector("p").textContent = "Error: " + res.error
             return
