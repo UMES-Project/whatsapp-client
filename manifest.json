@@ -11,7 +11,7 @@
     "content_scripts": [
         {
             "matches": [
-                "<all_urls>"
+                "https://web.whatsapp.com/**/*"
             ],
             "js": [
                 "src/content.js",
@@ -22,5 +22,11 @@
     ],
     "web_accessible_resources": [
         "assets/umes-icon.png"
+    ],
+    "browser_action": {
+        "default_popup": "src/html/popup.html"
+    },
+    "permissions": [
+        "storage"
     ]
 }
